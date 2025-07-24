@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AIICA - Innovación Agrícola para el Futuro de Colombia</title>
+    
+    <!-- Tailwind CSS for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Custom Icons Library -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        /* Applying the Inter font to the body */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Smooth scroll behavior */
+        html {
+            scroll-behavior: smooth;
+        }
+        /* Custom gradient for the hero section */
+        .hero-gradient {
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.3) 50%, rgba(0,0,0,0.7) 100%);
+        }
+        /* Animation for cards on hover */
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+        }
+        /* Styling for the loader */
+        .loader {
+            border: 4px solid #f3f3f3;
+            border-radius: 50%;
+            border-top: 4px solid #3498db;
+            width: 40px;
+            height: 40px;
+            animation: spin 2s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Header Navigation -->
+    <header class="bg-white/80 backdrop-blur-lg fixed top-0 left-0 right-0 z-50 shadow-md">
+        <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <!-- Logo -->
+            <a href="#" class="flex items-center space-x-2">
+                <img src="https://storage.googleapis.com/maker-system-project-images/images/AIICA-LOGOColor.jpg" alt="Logo de AIICA" class="h-12 w-12 rounded-full object-cover">
+                <span class="text-2xl font-bold text-green-800">AIICA</span>
+            </a>
+            <!-- Desktop Navigation -->
+            <nav class="hidden md:flex space-x-8">
+                <a href="#proyectos" class="text-gray-600 hover:text-green-700 font-medium transition duration-300">Proyectos</a>
+                <a href="#nosotros" class="text-gray-600 hover:text-green-700 font-medium transition duration-300">Sobre Nosotros</a>
+                <a href="#servicios" class="text-gray-600 hover:text-green-700 font-medium transition duration-300">Servicios</a>
+                <a href="#involucrate" class="text-gray-600 hover:text-green-700 font-medium transition duration-300">Involúcrate</a>
+            </nav>
+            <!-- Contact Button -->
+            <a href="#contacto" class="hidden md:inline-block bg-green-600 text-white font-bold py-2 px-5 rounded-lg hover:bg-green-700 transition duration-300 shadow-lg">
+                Contacto
+            </a>
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button" class="md:hidden p-2 rounded-md text-gray-600 hover:bg-gray-100">
+                <i data-lucide="menu"></i>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden px-6 pt-2 pb-4">
+            <a href="#proyectos" class="block py-2 text-gray-600 hover:text-green-700">Proyectos</a>
+            <a href="#nosotros" class="block py-2 text-gray-600 hover:text-green-700">Sobre Nosotros</a>
+            <a href="#servicios" class="block py-2 text-gray-600 hover:text-green-700">Servicios</a>
+            <a href="#involucrate" class="block py-2 text-gray-600 hover:text-green-700">Involúcrate</a>
+            <a href="#contacto" class="block mt-2 text-center bg-green-600 text-white font-bold py-2 px-5 rounded-lg hover:bg-green-700 transition duration-300">Contacto</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="relative h-screen flex items-center justify-center text-white text-center" style="background: url('https://images.unsplash.com/photo-1492496913980-501348b61469?q=80&w=1887&auto=format&fit=crop') no-repeat center center/cover;">
+            <div class="absolute inset-0 hero-gradient"></div>
+            <div class="relative z-10 p-6 max-w-4xl mx-auto">
+                <h1 class="text-4xl md:text-6xl font-extrabold mb-4 leading-tight" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">
+                    Innovación que Cosecha Futuro en el Campo Colombiano
+                </h1>
+                <p class="text-lg md:text-xl mb-8 max-w-2xl mx-auto" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.7);">
+                    Somos AIICA, una asociación sin fines de lucro que impulsa la agricultura sostenible a través de tecnología de bajo costo y alto impacto.
+                </p>
+                <a href="#proyectos" class="bg-yellow-400 text-green-900 font-bold py-4 px-8 rounded-lg text-lg hover:bg-yellow-500 transition duration-300 transform hover:scale-105 shadow-xl">
+                    Descubre Nuestros Proyectos
+                </a>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="proyectos" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold text-green-800">Proyectos que Transforman Realidades</h2>
+                    <p class="text-lg text-gray-600 mt-4 max-w-3xl mx-auto">
+                        Desarrollamos soluciones tecnológicas innovadoras, accesibles y sostenibles para los desafíos del sector agrícola en Colombia.
+                    </p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                    <!-- Project Card 1 -->
+                    <div class="project-card bg-gray-50 rounded-xl shadow-lg overflow-hidden transition-transform duration-300">
+                        <img src="https://images.unsplash.com/photo-1617591935553-3538354c1c5a?q=80&w=1887&auto=format&fit=crop" alt="Imagen de un río" class="w-full h-56 object-cover">
+                        <div class="p-6">
+                             <div class="flex items-center text-green-600 mb-2">
+                                <i data-lucide="zap" class="w-5 h-5 mr-2"></i>
+                                <h3 class="font-bold text-xl text-green-800">Hidrogenerador Eléctrico</h3>
+                            </div>
+                            <p class="text-gray-600">Generamos energía limpia y de bajo costo aprovechando el flujo de agua en zonas rurales, llevando luz a hogares sin acceso a la red eléctrica convencional.</p>
+                        </div>
+                    </div>
+                    <!-- Project Card 2 -->
+                    <div class="project-card bg-gray-50 rounded-xl shadow-lg overflow-hidden transition-transform duration-300">
+                        <img src="https://images.unsplash.com/photo-1560493676-04071c5f467b?q=80&w=1974&auto=format&fit=crop" alt="Imagen de un dron sobre un cultivo" class="w-full h-56 object-cover">
+                        <div class="p-6">
+                            <div class="flex items-center text-green-600 mb-2">
+                                <i data-lucide="camera" class="w-5 h-5 mr-2"></i>
+                                <h3 class="font-bold text-xl text-green-800">Cámara Multiespectral</h3>
+                            </div>
+                            <p class="text-gray-600">Una herramienta de agricultura de precisión para analizar la salud de los cultivos, permitiendo tomar decisiones informadas y optimizar recursos.</p>
+                        </div>
+                    </div>
+                    <!-- Project Card 3 -->
+                    <div class="project-card bg-gray-50 rounded-xl shadow-lg overflow-hidden transition-transform duration-300">
+                        <img src="https://images.unsplash.com/photo-1620714223084-86c8df357670?q=80&w=1974&auto=format&fit=crop" alt="Imagen de un brazo robótico" class="w-full h-56 object-cover">
+                        <div class="p-6">
+                            <div class="flex items-center text-green-600 mb-2">
+                                <i data-lucide="bot" class="w-5 h-5 mr-2"></i>
+                                <h3 class="font-bold text-xl text-green-800">Brazo Robótico SO-101</h3>
+                            </div>
+                            <p class="text-gray-600">Prototipo robótico de bajo costo, fabricado con impresión 3D, para automatizar tareas repetitivas como siembra, recolección y clasificación.</p>
+                        </div>
+                    </div>
+                     <!-- Project Card 4 -->
+                    <div class="project-card bg-gray-50 rounded-xl shadow-lg overflow-hidden transition-transform duration-300">
+                        <img src="https://images.unsplash.com/photo-1593993026993-534a74a4f891?q=80&w=1887&auto=format&fit=crop" alt="Compost" class="w-full h-56 object-cover">
+                        <div class="p-6">
+                            <div class="flex items-center text-green-600 mb-2">
+                                <i data-lucide="recycle" class="w-5 h-5 mr-2"></i>
+                                <h3 class="font-bold text-xl text-green-800">Compostera de Lombrices</h3>
+                            </div>
+                            <p class="text-gray-600">Producimos humus líquido y sólido a partir de residuos orgánicos, mejorando la fertilidad del suelo de manera sostenible y natural.</p>
+                        </div>
+                    </div>
+                     <!-- Project Card 5 -->
+                    <div class="project-card bg-gray-50 rounded-xl shadow-lg overflow-hidden transition-transform duration-300">
+                        <img src="https://images.unsplash.com/photo-1581292144699-a2ad59356fe3?q=80&w=1964&auto=format&fit=crop" alt="Plántulas en un invernadero" class="w-full h-56 object-cover">
+                        <div class="p-6">
+                            <div class="flex items-center text-green-600 mb-2">
+                                <i data-lucide="sprout" class="w-5 h-5 mr-2"></i>
+                                <h3 class="font-bold text-xl text-green-800">Microinvernadero</h3>
+                            </div>
+                            <p class="text-gray-600">Sistema compacto para controlar temperatura, humedad y luz, facilitando la germinación y el desarrollo inicial de las plantas.</p>
+                        </div>
+                    </div>
+                     <!-- Project Card 6 -->
+                    <div class="project-card bg-gray-50 rounded-xl shadow-lg overflow-hidden transition-transform duration-300">
+                        <img src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?q=80&w=1887&auto=format&fit=crop" alt="Cultivo de cacao" class="w-full h-56 object-cover">
+                        <div class="p-6">
+                            <div class="flex items-center text-green-600 mb-2">
+                                <i data-lucide="bar-chart-2" class="w-5 h-5 mr-2"></i>
+                                <h3 class="font-bold text-xl text-green-800">Monitoreo de Cultivos</h3>
+                            </div>
+                            <p class="text-gray-600">Plataforma tecnológica para recopilar datos en tiempo real sobre variables críticas en cultivos como el cacao, incluyendo la detección de plagas.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Us Section -->
+        <section id="nosotros" class="py-20 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <div class="flex flex-col md:flex-row items-center gap-12">
+                    <div class="md:w-1/2">
+                        <h2 class="text-4xl font-bold text-green-800 mb-4">Nuestra Misión: Sembrar Innovación</h2>
+                        <p class="text-gray-600 mb-6 text-lg">
+                            AIICA es una asociación sin ánimo de lucro reconocida bajo la legislación colombiana, comprometida con la investigación, diseño y desarrollo de proyectos tecnológicos para el sector agrícola. Nuestro propósito es fortalecer el campo colombiano, promoviendo la sostenibilidad y el uso de energías limpias con herramientas de bajo costo y alto impacto.
+                        </p>
+                        <div class="bg-green-100 border-l-4 border-green-500 text-green-800 p-4 rounded-r-lg">
+                            <p class="font-semibold">Fundadores:</p>
+                            <p>Leyder Baldillo Valdez, Sebastián Camilo Cruz Dussan y Diego Fernando Ortiz, un equipo comprometido con el desarrollo productivo y ambiental de nuestras zonas agrícolas.</p>
+                        </div>
+                    </div>
+                    <div class="md:w-1/2">
+                        <img src="https://images.unsplash.com/photo-1591115765322-343d0848a31a?q=80&w=1887&auto=format&fit=crop" alt="Equipo de agricultores trabajando" class="rounded-xl shadow-2xl w-full h-auto">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="servicios" class="py-20 bg-white">
+            <div class="container mx-auto px-6 text-center">
+                 <h2 class="text-4xl font-bold text-green-800 mb-16">¿Qué Hacemos?</h2>
+                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
+                     <!-- Service 1 -->
+                     <div class="flex flex-col items-center">
+                         <div class="bg-green-100 p-6 rounded-full mb-4">
+                             <i data-lucide="flask-conical" class="w-10 h-10 text-green-600"></i>
+                         </div>
+                         <h3 class="font-bold text-xl mb-2 text-green-800">Investigación y Desarrollo</h3>
+                         <p class="text-gray-600">Creamos soluciones prácticas y asequibles para los problemas reales del sector agrícola.</p>
+                     </div>
+                     <!-- Service 2 -->
+                     <div class="flex flex-col items-center">
+                         <div class="bg-green-100 p-6 rounded-full mb-4">
+                             <i data-lucide="graduation-cap" class="w-10 h-10 text-green-600"></i>
+                         </div>
+                         <h3 class="font-bold text-xl mb-2 text-green-800">Educación y Capacitación</h3>
+                         <p class="text-gray-600">Formamos a agricultores y jóvenes en tecnologías avanzadas y métodos sostenibles.</p>
+                     </div>
+                     <!-- Service 3 -->
+                     <div class="flex flex-col items-center">
+                         <div class="bg-green-100 p-6 rounded-full mb-4">
+                             <i data-lucide="lightbulb" class="w-10 h-10 text-green-600"></i>
+                         </div>
+                         <h3 class="font-bold text-xl mb-2 text-green-800">Asesoría y Consultoría</h3>
+                         <p class="text-gray-600">Ofrecemos asesoría técnica para el diseño e implementación de soluciones tecnológicas.</p>
+                     </div>
+                     <!-- Service 4 -->
+                     <div class="flex flex-col items-center">
+                         <div class="bg-green-100 p-6 rounded-full mb-4">
+                             <i data-lucide="mountain-snow" class="w-10 h-10 text-green-600"></i>
+                         </div>
+                         <h3 class="font-bold text-xl mb-2 text-green-800">Ecoturismo Sostenible</h3>
+                         <p class="text-gray-600">Promovemos experiencias turísticas responsables que valoran nuestro patrimonio natural.</p>
+                     </div>
+                 </div>
+            </div>
+        </section>
+
+        <!-- Gemini AI Advisor Section -->
+        <section id="asesor-ia" class="py-20 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <div class="bg-white rounded-2xl shadow-xl p-8 md:p-12 lg:flex items-center gap-12">
+                    <div class="lg:w-1/2 text-center lg:text-left mb-8 lg:mb-0">
+                        <h2 class="text-4xl font-bold text-green-800 mb-4">Asesor Agrícola Inteligente ✨</h2>
+                        <p class="text-lg text-gray-600 mb-6">¿Tienes una pregunta sobre tu cultivo? ¿Enfrentas un problema en tu finca? Describe tu situación y nuestra IA, entrenada para el campo colombiano, te dará una recomendación.</p>
+                        <p class="text-sm text-gray-500">Esta herramienta es una guía y no reemplaza la consulta con un agrónomo profesional.</p>
+                    </div>
+                    <div class="lg:w-1/2">
+                        <form id="ai-advisor-form" class="bg-gray-100 p-6 rounded-lg">
+                            <label for="user-prompt" class="block text-gray-700 font-medium mb-2">Describe tu consulta:</label>
+                            <textarea id="user-prompt" rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500" placeholder="Ej: Mis plantas de café tienen las hojas amarillas y se están cayendo. ¿Qué puede ser?"></textarea>
+                            <button type="submit" class="w-full mt-4 bg-yellow-400 text-green-900 font-bold py-3 px-6 rounded-lg hover:bg-yellow-500 transition duration-300 flex items-center justify-center">
+                                Obtener Recomendación ✨
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action Section -->
+        <section id="involucrate" class="py-20 bg-green-800 text-white">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-4xl font-bold mb-4">Sé Parte del Cambio</h2>
+                <p class="text-lg text-green-200 mb-8 max-w-3xl mx-auto">Nuestros proyectos son posibles gracias al apoyo de personas y organizaciones que creen en un futuro sostenible para el campo. Tu contribución es fundamental.</p>
+                <div class="flex flex-col md:flex-row justify-center items-center gap-6">
+                    <div class="bg-white/10 p-8 rounded-xl md:w-1/3 text-left">
+                        <h3 class="text-2xl font-bold text-yellow-400 mb-3">Apoya un Proyecto</h3>
+                        <p class="mb-4">Con una inversión desde **$463.800 COP**, podemos construir un Hidrogenerador Eléctrico y llevar energía a una familia rural. ¡Cada aporte cuenta!</p>
+                        <a href="#contacto" class="bg-yellow-400 text-green-900 font-bold py-3 px-6 rounded-lg hover:bg-yellow-500 transition duration-300 inline-block">Donar Ahora</a>
+                    </div>
+                    <div class="bg-white/10 p-8 rounded-xl md:w-1/3 text-left">
+                        <h3 class="text-2xl font-bold text-yellow-400 mb-3">Conviértete en Aliado</h3>
+                        <p class="mb-4">Buscamos alianzas con entidades públicas y privadas para desarrollar e implementar proyectos de alto impacto. ¡Colaboremos juntos!</p>
+                        <a href="#contacto" class="bg-gray-200 text-gray-800 font-bold py-3 px-6 rounded-lg hover:bg-white transition duration-300 inline-block">Contáctanos</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contacto" class="py-20 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl font-bold text-green-800">Hablemos</h2>
+                    <p class="text-lg text-gray-600 mt-4">¿Tienes una idea, una pregunta o quieres colaborar? Nos encantaría saber de ti.</p>
+                </div>
+                <div class="max-w-4xl mx-auto bg-white p-8 sm:p-12 rounded-xl shadow-lg">
+                    <form action="#" method="POST" onsubmit="return false;">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                            <div>
+                                <label for="name" class="block text-gray-700 font-medium mb-2">Nombre</label>
+                                <input type="text" id="name" name="name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500" placeholder="Tu nombre completo" required>
+                            </div>
+                            <div>
+                                <label for="email" class="block text-gray-700 font-medium mb-2">Correo Electrónico</label>
+                                <input type="email" id="email" name="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500" placeholder="tu@email.com" required>
+                            </div>
+                        </div>
+                        <div class="mb-6">
+                            <label for="subject" class="block text-gray-700 font-medium mb-2">Asunto</label>
+                            <input type="text" id="subject" name="subject" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500" placeholder="Ej: Colaboración, Donación, etc." required>
+                        </div>
+                        <div class="mb-6">
+                            <label for="message" class="block text-gray-700 font-medium mb-2">Mensaje</label>
+                            <textarea id="message" name="message" rows="5" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500" placeholder="Escribe tu mensaje aquí..." required></textarea>
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="bg-green-600 text-white font-bold py-3 px-10 rounded-lg hover:bg-green-700 transition duration-300 shadow-lg">
+                                Enviar Mensaje
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-green-900 text-white">
+        <div class="container mx-auto px-6 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- About Column -->
+                <div class="md:col-span-2">
+                    <div class="flex items-center mb-4">
+                        <img src="https://storage.googleapis.com/maker-system-project-images/images/AIICA-LOGOColor.jpg" alt="Logo de AIICA" class="h-12 w-12 rounded-full mr-3">
+                        <h3 class="text-2xl font-bold">AIICA</h3>
+                    </div>
+                    <p class="text-green-200">Asociación de Innovación e Investigación Agrícola. Transformando el agro colombiano con tecnología y sostenibilidad.</p>
+                </div>
+                <!-- Links Column -->
+                <div>
+                    <h4 class="font-bold text-lg mb-4">Navegación</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#proyectos" class="text-green-200 hover:text-yellow-400 transition">Proyectos</a></li>
+                        <li><a href="#nosotros" class="text-green-200 hover:text-yellow-400 transition">Sobre Nosotros</a></li>
+                        <li><a href="#servicios" class="text-green-200 hover:text-yellow-400 transition">Servicios</a></li>
+                        <li><a href="#involucrate" class="text-green-200 hover:text-yellow-400 transition">Involúcrate</a></li>
+                    </ul>
+                </div>
+                <!-- Social Media Column -->
+                <div>
+                    <h4 class="font-bold text-lg mb-4">Síguenos</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-green-200 hover:text-yellow-400 transition"><i data-lucide="twitter" class="w-6 h-6"></i></a>
+                        <a href="#" class="text-green-200 hover:text-yellow-400 transition"><i data-lucide="facebook" class="w-6 h-6"></i></a>
+                        <a href="#" class="text-green-200 hover:text-yellow-400 transition"><i data-lucide="linkedin" class="w-6 h-6"></i></a>
+                        <a href="#" class="text-green-200 hover:text-yellow-400 transition"><i data-lucide="instagram" class="w-6 h-6"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-12 border-t border-green-700 pt-6 text-center text-green-300 text-sm">
+                <p>&copy; 2025 AIICA. Todos los derechos reservados. Diseñado con pasión para el campo colombiano.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal for AI Response -->
+    <div id="ai-response-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-lg shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+            <div class="p-6 border-b flex justify-between items-center">
+                <h3 class="text-2xl font-bold text-green-800">Recomendación del Asesor IA ✨</h3>
+                <button id="close-modal-button" class="text-gray-500 hover:text-gray-800">
+                    <i data-lucide="x" class="w-6 h-6"></i>
+                </button>
+            </div>
+            <div id="modal-content" class="p-6">
+                <!-- Loader -->
+                <div id="loader" class="flex justify-center items-center py-10">
+                    <div class="loader"></div>
+                </div>
+                <!-- Response -->
+                <div id="response-text" class="text-gray-700 space-y-4" style="white-space: pre-wrap;"></div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // --- Mobile menu logic ---
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // --- AI Advisor and Modal Logic ---
+        const aiAdvisorForm = document.getElementById('ai-advisor-form');
+        const modal = document.getElementById('ai-response-modal');
+        const closeModalButton = document.getElementById('close-modal-button');
+        const modalContent = document.getElementById('modal-content');
+        const loader = document.getElementById('loader');
+        const responseText = document.getElementById('response-text');
+
+        // Function to show the modal
+        const showModal = () => {
+            modal.classList.remove('hidden');
+        };
+
+        // Function to hide the modal
+        const hideModal = () => {
+            modal.classList.add('hidden');
+        };
+
+        // Event listener for form submission
+        aiAdvisorForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const userInput = document.getElementById('user-prompt').value;
+            if (!userInput.trim()) {
+                alert('Por favor, ingresa tu consulta.');
+                return;
+            }
+
+            // Show modal and loader
+            showModal();
+            loader.style.display = 'flex';
+            responseText.innerHTML = '';
+
+            // Construct the prompt for the Gemini API
+            const prompt = `Eres un experto agrónomo colombiano con profundo conocimiento de las condiciones y cultivos del departamento del Huila. Un agricultor te hace la siguiente consulta: "${userInput}". 
+            
+            Proporciona una respuesta estructurada y fácil de entender. Sigue este formato:
+            1.  **Análisis del Problema:** Describe brevemente las posibles causas del problema mencionado.
+            2.  **Recomendaciones Prácticas:** Ofrece una lista de 2 a 4 acciones claras y concretas que el agricultor puede tomar. Prioriza soluciones de bajo costo y sostenibles.
+            3.  **Prevención a Futuro:** Da un consejo para evitar que el problema vuelva a ocurrir.
+            4.  **Descargo de Responsabilidad:** Termina siempre con la frase: "Recuerda que esta es una recomendación generada por IA. Para un diagnóstico preciso, consulta a un ingeniero agrónomo."
+            
+            Usa un lenguaje amigable y directo.`;
+
+            try {
+                // Gemini API Call
+                let chatHistory = [];
+                chatHistory.push({ role: "user", parts: [{ text: prompt }] });
+                const payload = { contents: chatHistory };
+                const apiKey = ""; // API Key is handled by the environment
+                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
+                
+                const response = await fetch(apiUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+
+                if (!response.ok) {
+                    throw new Error(`Error en la API: ${response.statusText}`);
+                }
+
+                const result = await response.json();
+
+                let generatedText = "No se pudo obtener una respuesta. Inténtalo de nuevo.";
+                if (result.candidates && result.candidates.length > 0 &&
+                    result.candidates[0].content && result.candidates[0].content.parts &&
+                    result.candidates[0].content.parts.length > 0) {
+                    generatedText = result.candidates[0].content.parts[0].text;
+                }
+                
+                // Display the response
+                responseText.innerText = generatedText;
+
+            } catch (error) {
+                console.error("Error calling Gemini API:", error);
+                responseText.innerText = "Hubo un error al procesar tu solicitud. Por favor, inténtalo más tarde.";
+            } finally {
+                // Hide loader
+                loader.style.display = 'none';
+            }
+        });
+
+        // Event listener to close the modal
+        closeModalButton.addEventListener('click', hideModal);
+        modal.addEventListener('click', (e) => {
+            // Close if clicked outside the content area
+            if (e.target === modal) {
+                hideModal();
+            }
+        });
+
+    </script>
+</body>
+</html>
