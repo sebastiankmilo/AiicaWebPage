@@ -1,13 +1,61 @@
-<!doctype html>
-<html lang="en">
-  <head>
+<!DOCTYPE html>
+<html lang="es">
+<head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + React + TS</title>
-  </head>
-  <body>
+    <title>AIICA - Innovación Agrícola para el Futuro de Colombia</title>
+    
+    <!-- Tailwind CSS for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        // Configuración de Tailwind para que coincida con el HTML original
+        tailwind.config = {
+            theme: {
+                container: {
+                    center: true,
+                    padding: {
+                        DEFAULT: '1rem',
+                        sm: '1.5rem',
+                    },
+                    screens: {
+                        sm: '640px',
+                        md: '768px',
+                        lg: '1024px',
+                        xl: '1280px',
+                        '2xl': '1536px',
+                    },
+                }
+            }
+        }
+    </script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Custom Icons Library -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- Google reCAPTCHA v2 Script -->
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    
+    <!-- Reset CSS -->
+    <link rel="stylesheet" href="/reset.css">
+</head>
+<body class="bg-gray-50 text-gray-800">
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
-  </body>
+    
+    <!-- Initialize Lucide icons -->
+    <script>
+        // Initialize Lucide icons after DOM loads
+        document.addEventListener('DOMContentLoaded', function() {
+            if (typeof lucide !== 'undefined') {
+                lucide.createIcons();
+            }
+        });
+    </script>
+</body>
 </html>
