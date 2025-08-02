@@ -35,39 +35,10 @@ Landing page de la Asociación de Innovación e Investigación Agrícola (AIICA)
    npm install
    \`\`\`
 
-3. **Configurar variables de entorno**
-   
-   Crea un archivo \`.env\` en la raíz del proyecto con el siguiente contenido:
-   
-   \`\`\`env
-   # API Key de Google Gemini para el asesor IA
-   # Obtén tu API key en: https://makersuite.google.com/app/apikey
-   VITE_GEMINI_API_KEY=tu_api_key_de_gemini_aqui
-   
-   # Site Key de Google reCAPTCHA v2
-   # Obtén tu site key en: https://www.google.com/recaptcha/admin
-   # La siguiente es para testing solamente
-   VITE_RECAPTCHA_SITE_KEY=6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI
-   \`\`\`
-
-4. **Ejecutar en modo desarrollo**
+3. **Ejecutar en modo desarrollo**
    \`\`\`bash
    npm run dev
    \`\`\`
-
-## 🔧 Configuración de APIs
-
-### Google Gemini API
-
-1. Ve a [Google AI Studio](https://makersuite.google.com/app/apikey)
-2. Crea una nueva API key
-3. Agrega la key a tu archivo \`.env\` como \`REACT_APP_GEMINI_API_KEY\`
-
-### Google reCAPTCHA
-
-1. Ve a [Google reCAPTCHA Admin](https://www.google.com/recaptcha/admin)
-2. Registra un nuevo sitio con reCAPTCHA v2
-3. Agrega la site key a tu archivo \`.env\` como \`REACT_APP_RECAPTCHA_SITE_KEY\`
 
 ## 📁 Estructura del Proyecto
 
@@ -150,7 +121,7 @@ La aplicación está optimizada para:
 - Validación de formularios en el frontend
 - Protección reCAPTCHA contra spam
 - Sanitización de entrada de datos
-- Variables de entorno para API keys
+- Configuración segura de API keys
 
 ## 📄 Licencia
 
