@@ -177,4 +177,7 @@ config.js
 # Test results
 test-results/
 playwright-report/
-playwright/.cache/ 
+playwright/.cache/
+
+# Old project directories
+aiica-react-old/ 
