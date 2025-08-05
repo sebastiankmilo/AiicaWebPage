@@ -5,6 +5,7 @@
 
 import React from "react";
 // Usando lucide desde CDN como en el HTML original
+import logo from "../assets/AIICA-LOGOColor.png";
 
 const Footer: React.FC = () => {
   /**
@@ -33,7 +34,7 @@ const Footer: React.FC = () => {
             {/* Logo y nombre */}
             <div className="flex items-center mb-4">
               <img 
-                src="https://storage.googleapis.com/maker-system-project-images/images/AIICA-LOGOColor.jpg" 
+                src={logo}
                 alt="Logo de AIICA" 
                 className="h-12 w-12 rounded-full mr-3"
               />
