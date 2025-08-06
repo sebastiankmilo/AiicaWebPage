@@ -17,7 +17,11 @@ const ContactSection: React.FC = () => {
   
 
   // Estado para el envío del formulario
+  // const [isSubmitting, setIsSubmitting] = useState(false);
+  // const [_submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle");
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [isSubmitting, setIsSubmitting] = useState(false);
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [_submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle");
 
   /**
