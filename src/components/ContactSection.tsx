@@ -24,6 +24,7 @@ const ContactSection: React.FC = () => {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [_submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle");
   //
+  //
   /**
    * Maneja los cambios en los campos del formulario
    * @param e - Evento de cambio del input
